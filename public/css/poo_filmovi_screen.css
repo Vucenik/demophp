@@ -1,0 +1,396 @@
+html,body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,td,dd,form,fieldset,caption,legend,table,tr,td,th,address,blockquote,img{
+    margin:0;
+    padding:0;
+}
+
+img,fieldset {
+    border:none;
+}
+body *,*:after,*:before{
+    box-sizing:border-box;
+}
+legend{
+    -webkit-apperance:none;
+    appearance: none;
+    display:block
+    
+
+}
+button, summary{
+    cursor:pointer;
+}
+body,button,input,table,textarea,select,a,caption{
+    font-size:1rem;
+    line-height:1.5;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+}
+:root{
+    --base-scale:calc(100vw/75);
+    --h2-font-size:max(1em,min(4em,calc(var(--base-scale)*4)));
+    --padding-size:max(1em,min(2em,calc(var(--base-scale)*2)));
+    --margin-size:max(0.5em,min(2em,calc(var(--base-scale)*2)));
+    --border-radius:max(1em,min(3em,calc(var(--base-scale)*3)));
+
+
+}
+html,body{
+    height: 100%;
+
+    width:100%;
+    --body-background:hsl(208, 100%, 95%);
+    --form-background:hsl(208, 100%, 97%);
+    --form-header: rgb(46, 119, 184);
+    --form-font: hsl(208,6%,10%);
+    --form-placeholder: hsl(208,6%,40%);
+    --form-error:red;
+    --table-thead-backgraund:hsl(208,60%,65%);
+    --table-tr-even:hsl(208,100%,90%);
+    --table-font-edit:hsl(208,100%,40%);
+   
+
+}
+body{
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: var(--body-background);
+    display: flex;
+    flex-direction: column;
+    overflow:auto;
+
+}
+header,footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+   
+    background-color: var(--form-header);
+    
+}
+header{
+    justify-content: left;
+    position:relative;
+   
+
+
+}
+header.glavni{
+    flex-direction: column;
+   flex:0 0 auto;
+  padding: var( --padding-size);
+}
+header a.logo{
+    display:block;
+    position:absolute;
+    top:10%;
+    left:1%;
+  
+   
+    
+
+}
+header .logo>img{
+    padding: 0.5em;
+    width:100%;
+    max-width: 8em;
+    height:auto;
+   
+  
+   
+ 
+   
+}
+nav.navigacija{
+    display: block;
+    width:100%;
+}
+nav.navigacija ul{
+    list-style: none;
+    display: block;
+}
+nav.navigacija a{
+
+    display: inline-block;
+    padding:0.4em;  
+    text-decoration: none;
+    color:var(--form-background);
+    border-bottom: 1px solid transparent;
+    transition: border 0.4s;
+}
+nav.navigacija a:hover{
+    border-bottom: 1px solid var(--form-background);
+
+}
+footer{
+   /* background-image: url("../img/logo-white.png") ;*/
+    background-repeat: no-repeat;
+    background-size: 7.9em;
+  min-height: 5em;
+   
+    background-position:95%;
+
+}
+h1{
+    font-size:calc( var(--h2-font-size)*0.8);
+    text-align: center;
+    color:var(--form-background);
+}
+main{
+    padding: var(--padding-size) 0;
+   
+    flex:1 1 auto;
+}
+
+h2.naslov,p.naslov{
+    display:block;
+    width:100%;
+    max-width:40em ;
+    text-align: center;
+    margin:0,auto,2em,auto;
+   
+   
+}
+h2.naslov{
+    color:var(--form-header);
+    font-size: var(--h2-font-size);
+    font-weight: bolder;
+    padding: var(--padding-size);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+p.naslov{
+    padding: var(--padding-size); 
+    text-align: left;
+    color:var(--form-font);
+
+}
+form{
+    background-color: var(--form-background);
+    margin:1em auto;
+    width:100%;
+    max-width: 30em;
+    border-radius: 1em;
+    overflow: hidden;
+    border:solid var(--form-header);
+    border-width: 0 1px 1px;
+  z-index: 5000;
+}
+form>header{
+ display: flex;
+ padding: 0.8em;
+    background-color: var(--form-header);
+    text-align: center;
+    color:var(--form-background);
+    justify-content: space-between;
+}
+form fieldset{
+    width:95%;
+    margin:auto;
+}
+form label{
+    display: block;
+    width: 100%;
+ padding: 0.5em;
+ margin-top: 0.5em;
+}
+form input,form select{
+    
+outline: none;
+ width: 100%;
+    padding: 0.3em 0.4em;
+    border-radius: 0.4em;
+    border:1px solid black;
+  
+}
+form label{
+    width:100%;
+    padding: 0.4em 0.5em; 
+}
+form option,form select{
+    width:100%;
+    padding: 0.4em 0.5em; 
+}
+form span{
+    color:var(--form-error);
+    text-align: center;
+    display: block;
+    min-height: 2em;
+
+}
+form footer{
+    width:100%;
+   background-color: transparent;
+    display: inline-block;
+    text-align: center;
+    padding: 1em;
+}
+form button,.agumb{
+    text-decoration: none;
+    padding: 0.4em 0.8em;
+    background-color: var(--form-header);
+    color:var(--form-background);
+    font-weight: bolder;
+    text-transform: uppercase;
+    border:none;
+    border-radius: 0.2em;
+    transition:opacity 0.3s,box-shadow 0.3s;
+
+}
+form button:hover,.agumb:hover{
+    box-shadow: 0.1em 0.1em 0.1em black, -0.2em -0.2em 0.1em white;
+    opacity: 0.9;
+}
+form button:focus,.agumb:focus{
+    transform: scale(0.9) 
+    translateY(0.2em);
+}
+form input:focus:valid, form select:focus:valid{
+    border-color:green;
+}
+form input:focus:invalid, form select:focus:invalid{
+    border-color:var(--form-error);
+
+}
+nav.selekcija{
+    width:100%;
+    margin: 1em 0;
+
+
+  
+}
+nav.selekcija ul{
+    background-color: var(--table-tr-even);
+    list-style: none;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+nav.selekcija li{
+  
+    width:100%;
+    max-width: 20em;
+}
+nav.selekcija form{
+    display: flex;
+    margin: 0;
+  border-radius: 0;
+  border: none;
+  background-color: var(--table-tr-even);
+   
+
+}
+nav.selecija form fieldset{
+   width: 60%;
+}
+nav.selekcija form footer{
+width:40%;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.5em;
+    background-image: none;
+   
+}
+caption{
+  
+    font-weight: bold;
+    font-size: 1,25em;
+    background-color: var(--form-header);
+   color:var(--form-background);
+}
+caption>a{
+
+    text-decoration: none;
+    display:inline-block;
+    font-weight: bold;
+  font-size: larger;
+    width:100%;
+    color:var(--form-background);
+    padding: 0.6em 0.8em;
+}
+table{
+    margin:0 auto;
+    border-collapse:collapse;
+    background-color: var(--form-background);
+    border:solid var(--form-font);
+    border-width: 0 1px 1px;
+    width:100%;
+    max-width: 50em;
+}
+thead th{
+    background-color: var(--table-thead-backgraund);
+    color:var(--form-background);
+
+}
+th,td{
+    
+    padding: 0.25em 0.5em;
+    text-align: center;
+  border-bottom: 1px solid var(--form-font);
+}
+td{
+    color:var(--form-font);
+}
+tbody tr:nth-child(even){
+    background-color: var(--table-tr-even);
+}
+tr button,tr a{
+    cursor: pointer;
+    background-color: transparent;
+    outline:none;
+    border:none;
+    display: inline-block;
+    text-decoration: underline;
+    color: var(--table-font-edit);
+    transition: color 0.3s;
+
+
+}
+tr button:hover,tr button:focus,tr a:hover,tr a:focus{
+    color:var(--form-error);
+}
+.modal{
+    position:absolute;
+    top:0;
+    left:-200em;
+    width:100%;
+    height:100%;
+    overflow: auto;
+ 
+    transform:scale(0);
+    transition: transform 0.3s;
+    
+
+    
+}
+.modal_show{
+
+    transform:scale(1);
+    left:0;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.534);
+
+}
+@media (max-width:37rem){
+   
+    header a.logo{
+        display:inline-block;
+        position:static;
+       
+      
+       
+        
+    
+    }
+    
+ 
+    h1{
+        padding: 0.2em;
+    }
+}
+
